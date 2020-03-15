@@ -1,0 +1,79 @@
+html{
+    height: 100%;
+}
+.flex-container {
+    display: flex;
+} 
+
+.sidebar-profile {
+    flex: 1;
+}
+
+.todo-content{
+    flex: 3;
+    margin-top: 4%;
+    margin-right: 3%;
+    height: 95%;
+}
+
+.todo-body{
+    display: flex;
+    margin-top: 5vw;
+}
+
+.todo {
+    flex: 1;
+    margin-right: 2%;
+}
+
+.todo h4,
+.complete h4 {
+    text-align: center;
+    margin: 0;
+    display: inline-block;
+}
+
+.todo .card {
+    background-color: #dddddd;
+    margin: 0;
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.complete .card {
+    background-color: #f2f4f5;
+    margin: 0;
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+
+.complete {
+    flex: 1;
+}
+
+#tasks{
+    margin: 0;
+    border-radius: 0;
+    color: black;
+    background-color: #ffffff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#tasks img {
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    margin-top: 2%;
+}
+
+.complete #tasks li {
+    color: gray;
+}
+
+.complete #tasks {
+    align-items: stretch;
+}

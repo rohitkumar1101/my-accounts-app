@@ -1,0 +1,14 @@
+//USERS
+export const FETCH_USERS = 'FETCH_USERS'
+
+//POSTS
+export const FETCH_POSTS = 'FETCH_POSTS'
+export const FETCH_COMMENTS = 'FETCH_COMMENTS'
+export const FETCH_ACTIVITIES = 'FETCH_ACTIVITIES'
+
+//GALLERY
+export const FETCH_ALBUM = 'FETCH_ALBUM'
+export const FETCH_PHOTOS = 'FETCH_PHOTOS'
+
+//ToDo
+export const FETCH_TODO = 'FETCH_TODO'

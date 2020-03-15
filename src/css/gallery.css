@@ -1,0 +1,72 @@
+html{
+    height: 100%;
+}
+.flex-container {
+    display: flex;
+} 
+
+.sidebar-profile {
+    flex: 1;
+}
+
+.gallery-content{
+    flex: 3;
+    margin-top: 4%;
+    margin-right: 3%;
+    height: 95%;
+}
+
+.albums {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.gallery{
+    /* flex: 1 0 21%; */
+    width: calc(100% * (1/4) - 10px - 1px);
+    margin: 5px;
+    padding: 0;
+}
+
+.gallery .card {
+    border-radius: 10px;
+}
+.gallery:hover {
+    border: 1px solid #777;
+}
+  
+.gallery img {
+    width: 100%;
+    height: 200px;
+    border-radius:0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+  }
+  
+.desc {
+    padding: 15px;
+    text-align: center;
+    background-color: #f2f2f2;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+a,
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.photo-gallery {
+    width: calc(100% * (1/4) - 10px - 1px);
+    margin: 5px;
+    padding: 0;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}

@@ -1,0 +1,134 @@
+/* Styling inside Posts map */
+.card{
+    border-radius: 20px;
+    padding: 30px;
+    margin: 2% 0;
+}
+
+.posts-header {
+    float: right;
+    display: flex;
+}
+
+.posts-header .center-align {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-align h5, p {
+    margin: 0;
+}
+
+.posts-header .center-align p {
+    font-size: 12px;
+    color: gray;
+}
+
+.post-image img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 2% 0;
+}
+
+.comment-card {
+    padding: 10px;
+}
+
+.comment-card .center-align h5,h6,
+.comment-card .comment-data h6{
+    display: inline-block;
+    margin: 0;
+}
+
+.comment-card .center-align h6, 
+.comment-card .time{
+    font-size: 14px;
+    color: gray;
+}
+
+.comment-card .center-align h6 {
+    margin-left: 2em;
+}
+.comment-card p {
+    margin-left: 65px;
+}
+/* End of Styling inside posts Map */
+
+html{
+    height: 100%;
+}
+
+.flex-container {
+    display: flex;
+} 
+
+.sidebar-profile {
+    flex: 1;
+}
+
+.posts-content{
+    flex: 3;
+    margin-top: 4%;
+    margin-right: 3%;
+    height: 95%;
+}
+
+h4 {
+    display: inline-block;
+    color: rgb(90, 88, 88);
+    font-size: 1.4vw;
+}
+
+
+.posts-body {
+    display: flex;
+}
+
+.posts {
+    flex: 1.5;
+}
+
+.activity {
+    flex: 1;
+}
+
+.activity .card {
+    border-radius: 20px;
+    margin-left: 5%;
+}
+
+.activity .card h4 {
+    text-align: center;
+}
+
+.activity-data img {
+    height: 35px;
+    width: 35px;
+    margin-right: 0.5vw;
+    border-radius: 10px;
+}
+
+.activity-data h5, p{
+    display: inline-block;
+    margin:10px 0 ;
+}
+
+.activity-data h5 {
+    margin: 0;
+    font-weight: 400;
+
+}
+
+.activity-data p {
+    color: gray;
+    margin-left: 1vw ;
+}
+
+.activity-data h6 { 
+    float: right;
+    color: gray;
+    font-size: 12px;
+    margin-top: 1vw;
+    font-weight: 300;
+}

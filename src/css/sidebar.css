@@ -1,0 +1,44 @@
+.flex-container {
+  display: flex;
+}
+
+.sidebar {
+    margin: 2% 0 0 3%;
+    padding: 15% 0 0 2%;
+    width: 17vw;
+    background-color: #4327c0;
+    position: fixed;
+    height: 95%;
+    border-radius: 30px;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 2%;
+    font-size: 22px;
+    text-decoration: none;
+  }
+  
+  .sidebar hr {
+    background-color: rgb(236, 207, 207);
+    margin-right: 3rem;
+    border: 0.5px solid rgb(236, 207, 207) ;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

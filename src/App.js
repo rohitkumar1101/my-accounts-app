@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
+import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import store from './store'
+import Homepage from './Components/Homepage'
+import Profile from './Components/Profile'
+import Posts from './Components/Posts';
+import Gallery from './Components/Gallery'
+import Photos from './Components/Photos'
+import ToDoList from './Components/ToDoList'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Provider store={store}>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage} />
+					
+					<Route path={`${process.env.PUBLIC_URL}/profile/:id`} component={Profile} />
+					<Route path={`${process.env.PUBLIC_URL}/posts/:id`} component={Posts} />
+					<Route exact path={`${process.env.PUBLIC_URL}/gallery/:id`} component={Gallery} />
+					<Route exact path={`${process.env.PUBLIC_URL}/gallery/:id/:albumId`} component={Photos} />
+					<Route path={`${process.env.PUBLIC_URL}/todo/:id`} component={ToDoList} />
+
+				</Switch>
+			</BrowserRouter>
+		</Provider>
+	);
 }
 
 export default App;

@@ -1,0 +1,116 @@
+html{
+    height: 100%;
+}
+.flex-container {
+    display: flex;
+} 
+
+.sidebar-profile {
+    flex: 1;
+}
+
+.profile-content{
+    flex: 3;
+    margin-top: 4%;
+    margin-right: 3%;
+    height: 95%;
+}
+
+h4 {
+    display: inline-block;
+    color: rgb(90, 88, 88);
+    font-size: 1.4vw;
+}
+
+.profile-header {
+    float: right;
+    display: flex;
+}
+
+.profile-header h4 {    
+    color: gray;
+    font-weight: normal;
+    flex: 1;
+    margin: auto;
+}
+
+.profile-body {
+    display: flex;
+    text-align: center;
+}
+
+.personal-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 2vw; */
+}
+
+.personal-details img {
+    height: 12vw;
+    width: 12vw;
+    border-radius: 50%;
+    margin:0 auto ;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2vw;
+    padding: 1px;
+    flex: .5;
+    text-align: right;
+    color: gray;
+    margin: 0;
+}
+
+label::after {
+    content: ' : ';
+}
+
+li p {
+    margin:0 0 1px 15px;
+    font-size: 1.2vw;
+    font-weight: 500;
+    flex: 1;
+}
+
+.vertical { 
+    border-left: 1px solid rgba(221, 197, 197, 0.986); 
+    height: 80%; 
+    position:absolute; 
+    left: 50%; 
+    margin-top: 2%;
+} 
+
+.address {
+    flex: 2;
+    /* margin-left: 2vw; */
+}
+
+#address-header {
+    display: block;
+    text-align: left;
+    margin: 2vw 0 0 7vw;
+    font-size: 1.2vw;
+}
+
+.address ul {
+    padding: 0;
+    margin-left: -3%;
+}
+
+.address img{
+    height: 45vh;
+    width: 75vh;
+    margin-left: 10vw;
+}
+
+.address p span{
+    color: gray;
+}
