@@ -10,7 +10,7 @@ import { getAlbums, getPhotos } from '../actions/gallery_action'
 import { getToDolist } from '../actions/todo_action'
 
 class Homepage extends Component {
-    constructor(props) {
+    constructor(props) { 
         super(props)
     
         this.handleClick = this.handleClick.bind(this);

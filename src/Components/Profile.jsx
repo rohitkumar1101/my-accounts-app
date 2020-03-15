@@ -66,7 +66,7 @@ class Profile extends Component {
 
                         <div className="vertical"></div>
 
-                        <div className="address">
+                        <div className="address"> 
                             <label id="address-header">Address </label>
                             <ul>
                                 <li>

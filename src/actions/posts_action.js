@@ -4,7 +4,7 @@ export const getPosts = () => dispatch => {
     fetch(`https://panorbit.in/api/posts.json`)
     .then(res => res.json())
     .then(users => 
-        dispatch({
+        dispatch({ 
             type: FETCH_POSTS,
             payload: users
         })

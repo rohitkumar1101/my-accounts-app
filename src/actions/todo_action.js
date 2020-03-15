@@ -8,6 +8,6 @@ export const getToDolist = () => dispatch => {
             type: FETCH_TODO,
             payload: users
         })
-    )
+    ) 
     .catch(err => console.log(err))
 };

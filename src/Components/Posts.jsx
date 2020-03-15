@@ -81,7 +81,7 @@ class Posts extends Component {
                         <div className="posts-header">
                             <img src={ users[id].profilepicture } alt="profile" />
                             <h4> { users[id].name }</h4> 
-                        </div><hr />
+                        </div><hr /> 
 
                         <div className="posts-body">
                             <div className="posts">

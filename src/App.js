@@ -7,7 +7,7 @@ import Profile from './Components/Profile'
 import Posts from './Components/Posts';
 import Gallery from './Components/Gallery'
 import Photos from './Components/Photos'
-import ToDoList from './Components/ToDoList'
+import ToDoList from './Components/ToDoList' 
 
 function App() {
 	return (

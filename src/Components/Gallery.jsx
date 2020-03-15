@@ -7,7 +7,7 @@ class Gallery extends Component {
     render() {
         const { users, photos, albums} = this.props
         const id = this.props.match.params.id-1
-
+ 
         let albumsData = albums.map((album,index) => {
             return (
                 <div key={index} className="gallery card">

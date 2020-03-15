@@ -48,7 +48,7 @@ class ToDoList extends Component {
                                                 <img src={square} />
                                                 <li>{item.title}</li>
                                             </div>
-                                        )
+                                        ) 
                                     })
                                 }
                             </div>

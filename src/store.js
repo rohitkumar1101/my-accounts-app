@@ -11,7 +11,7 @@ function saveToLocalStorage(state){
     catch(e){
         console.log(e);
     }
-}
+} 
 
 // Load from local storage
 function loadFromLocalStorage(){

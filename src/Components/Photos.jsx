@@ -34,7 +34,7 @@ class Photos extends Component {
                     <h4>
                         <a href={`${process.env.PUBLIC_URL}/gallery/${id+1}`} style={{color: "Blue"}}>
                             Albums</a> > album{albumId} 
-                    </h4>
+                    </h4> 
                     <div className="albums">
                         { photosData }
                     </div>

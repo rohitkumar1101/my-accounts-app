@@ -4,7 +4,7 @@ export const getAlbums = () => dispatch => {
     fetch(`https://panorbit.in/api/albums.json`)
     .then(res => res.json())
     .then(users => 
-        dispatch({
+        dispatch({ 
             type: FETCH_ALBUM,
             payload: users
         })

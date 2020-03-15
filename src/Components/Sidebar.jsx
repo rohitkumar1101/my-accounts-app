@@ -5,7 +5,7 @@ import '../css/sidebar.css'
 
 class Sidebar extends Component {
     render() {
-        return (
+        return ( 
             <div className="flex-container">
                 <div className="sidebar">
                     <Link to={`${process.env.PUBLIC_URL}/profile/${this.props.id}`}>Profile</Link> <hr />
