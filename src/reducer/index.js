@@ -6,6 +6,7 @@ import getActivitiesReducer from './activities_reducer'
 import getAlbumsReducer from './album_reducer';
 import getPhotosReducer from './photos_reducer';
 import getToDoReducer from './todo_reducer';
+import dropdownReducer from './dropdown_reducer';
 
 const rootReducer = combineReducers({
    usersData: getUsersReducer, 
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
    albumData: getAlbumsReducer,
    photosData: getPhotosReducer,
    todoData: getToDoReducer,
+   dropdown: dropdownReducer,
 });
 
 export default rootReducer

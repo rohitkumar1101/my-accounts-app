@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Sidebar from './Sidebar'
 import { connect } from 'react-redux'
+import ProfileHeader from './ProfileHeader'
 import '../css/posts.css'
+import ProfileDropdown from './ProfileDropdown'
+
 
 class Posts extends Component {
 
@@ -9,7 +12,7 @@ class Posts extends Component {
         
     }
     render() {
-        const { users, posts, comments, activity } = this.props
+        const { users, posts, comments, activity, hidden } = this.props
         const profileid = this.props.match.params.id
         const id = profileid - 1
 
@@ -78,10 +81,9 @@ class Posts extends Component {
 
                     <div className="posts-content">
                         <h4>Posts</h4>
-                        <div className="posts-header">
-                            <img src={ users[id].profilepicture } alt="profile" />
-                            <h4> { users[id].name }</h4> 
-                        </div><hr /> 
+                        <ProfileHeader id={id} />
+                        <hr /> 
+                        { hidden ? null : <ProfileDropdown id={id} /> }
 
                         <div className="posts-body">
                             <div className="posts">
@@ -107,5 +109,7 @@ const mapStateToProps = state => ({
     posts: state.postsData.posts,
     comments: state.commentsData.comments,
     activity: state.activityData.recentActivity,
+    hidden: state.dropdown.hidden,
+
 })
 export default connect(mapStateToProps)(Posts)

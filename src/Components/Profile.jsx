@@ -3,11 +3,14 @@ import { connect } from 'react-redux'
 import '../css/profile.css'
 import Sidebar from './Sidebar'
 import map from '../img/map.png'
+import ProfileHeader from './ProfileHeader'
+import ProfileDropdown from './ProfileDropdown'
 
 class Profile extends Component {
+
     render() {
 
-        const { users } = this.props
+        const { users, hidden } = this.props
         const id = this.props.match.params.id-1
         return (
             <div className="flex-container">
@@ -16,10 +19,11 @@ class Profile extends Component {
                 </div>
                 <div className="profile-content">
                     <h4>Profile</h4>
-                    <div className="profile-header">
-                        <img src={ users[id].profilepicture } alt="profile" />
-                        <h4> { users[id].name }</h4> 
-                    </div><hr />
+                    
+                    <ProfileHeader id={id} />
+                    <hr />
+                    { hidden ? null : <ProfileDropdown id={id} /> }
+                    
 
                     <div className="profile-body">
                         <div className="personal-details">
@@ -98,5 +102,6 @@ class Profile extends Component {
 
 const mapStateToProps = state => ({
     users: state.usersData.users,
+    hidden: state.dropdown.hidden,
 })
 export default connect(mapStateToProps)(Profile)

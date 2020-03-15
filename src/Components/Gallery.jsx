@@ -2,10 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sidebar from './Sidebar'
 import '../css/gallery.css'
+import ProfileHeader from './ProfileHeader'
+import ProfileDropdown from './ProfileDropdown'
+
+
 
 class Gallery extends Component {
     render() {
-        const { users, photos, albums} = this.props
+        const { users, photos, albums, hidden} = this.props
         const id = this.props.match.params.id-1
  
         let albumsData = albums.map((album,index) => {
@@ -26,10 +30,10 @@ class Gallery extends Component {
                 </div>
                 <div className="gallery-content">
                     <h4>Gallery</h4>
-                    <div className="profile-header">
-                        <img src={ users[id].profilepicture } alt="profile" />
-                        <h4> { users[id].name }</h4> 
-                    </div><hr /><br/>
+                    <ProfileHeader id={id} />
+                    <hr />
+                    { hidden ? null : <ProfileDropdown id={id} /> }
+                    <br/>
 
                     <h4>Albums</h4>
                     <div className="albums">
@@ -45,6 +49,7 @@ const mapStateToProps = state => ({
     users: state.usersData.users,
     photos: state.photosData.albums,
     albums: state.albumData.album,
+    hidden: state.dropdown.hidden,
 })
 
 

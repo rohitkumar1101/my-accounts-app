@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sidebar from './Sidebar'
 import '../css/todo.css'
+import ProfileHeader from './ProfileHeader'
+import ProfileDropdown from './ProfileDropdown'
+
 
 import square from '../img/square.svg'
 import checkSquare from '../img/correct.svg'
@@ -9,7 +12,7 @@ import greenCheck from '../img/tick.svg'
 
 class ToDoList extends Component {
     render() {
-        const { users, list} = this.props
+        const { list, hidden} = this.props
         const id = this.props.match.params.id-1
 
         let ToDo = [] 
@@ -30,10 +33,9 @@ class ToDoList extends Component {
 
                 <div className="todo-content">
                     <h4>ToDo</h4>
-                    <div className="profile-header">
-                        <img src={ users[id].profilepicture } alt="profile" />
-                        <h4> { users[id].name }</h4> 
-                    </div><hr />
+                    <ProfileHeader id={id} />
+                    <hr />
+                    { hidden ? null : <ProfileDropdown id={id} /> }
 
                     <div className="todo-body">
                         <div className="todo">
@@ -82,6 +84,7 @@ class ToDoList extends Component {
 const mapStateToProps = state => ({
     users: state.usersData.users,
     list: state.todoData.todo,
+    hidden: state.dropdown.hidden,
 })
 
 
