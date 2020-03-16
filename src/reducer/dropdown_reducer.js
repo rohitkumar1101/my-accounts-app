@@ -1,7 +1,7 @@
 import { TOGGLE_DROPDOWN } from "../constants/action-types";
 
 const initState = {
-    hidden: false
+    hidden: true
 }
 
 const dropdownReducer = (state = initState, action) => {
