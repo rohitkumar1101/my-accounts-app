@@ -16,7 +16,7 @@ class Profile extends Component {
             <div className="flex-container">
                 <div className="sidebar-profile">
                     <Sidebar id={this.props.match.params.id}/>
-                </div>
+                </div> 
                 <div className="profile-content">
                     <h4>Profile</h4>
                     

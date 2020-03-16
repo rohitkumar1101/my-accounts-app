@@ -13,7 +13,7 @@ class ProfileHeader extends Component {
                 <img src={ users[id].profilepicture } alt="profile" />
                 <h4> { users[id].name }</h4> 
             </div>
-        )
+        ) 
     }
 }
 

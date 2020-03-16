@@ -23,7 +23,7 @@ class ToDoList extends Component {
                 <div key={index}>
                     { item.completed ?  complete.push(item) : ToDo.push(item) }
                 </div>
-            )
+            ) 
         })
         return (
             <div className="flex-container">

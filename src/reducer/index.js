@@ -19,4 +19,4 @@ const rootReducer = combineReducers({
    dropdown: dropdownReducer,
 });
 
-export default rootReducer
+export default rootReducer 

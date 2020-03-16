@@ -16,7 +16,7 @@ class Homepage extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     
-    componentDidMount(){
+    componentDidMount(){ 
         this.props.getUsers()
         this.props.getPosts()
         this.props.getComments()

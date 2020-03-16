@@ -22,7 +22,7 @@ class Photos extends Component {
                     )
                 }
         })
-
+ 
         return (
             <div className="flex-container">
                 <div className="sidebar-profile">

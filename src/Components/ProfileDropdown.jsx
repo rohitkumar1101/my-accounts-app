@@ -9,7 +9,7 @@ class ProfileDropdown extends Component {
         this.state = {}
         this.onClick = this.onClick.bind(this)
     }
-
+ 
     onClick(){
         this.props.hidden = false
     }

@@ -72,7 +72,7 @@ class Posts extends Component {
                 </div>
             )
         })
-        return (
+        return ( 
             <div>
                 <div className="flex-container">
                     <div className="sidebar-profile">

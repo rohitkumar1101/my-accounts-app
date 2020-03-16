@@ -14,4 +14,4 @@ export const FETCH_PHOTOS = 'FETCH_PHOTOS'
 export const FETCH_TODO = 'FETCH_TODO' 
 
 //Dropdown
-export const TOGGLE_DROPDOWN = 'TOGGLE_DROPDOWN'
+export const TOGGLE_DROPDOWN = 'TOGGLE_DROPDOWN' 

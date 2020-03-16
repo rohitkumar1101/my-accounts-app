@@ -40,7 +40,7 @@ class Gallery extends Component {
                         { albumsData }
                     </div>
                 </div>
-            </div>
+            </div> 
         )
     }
 }
