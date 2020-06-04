@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.wave {
+    background-color: blue;
+    display: grid;
+    height: 30rem;
+    position: relative;
+    place-items: center;
+    padding-top: 20rem;
+
+    svg {
+        display: none;
+    }
+
+    .account-card {
+        width: 22rem;
+        z-index: 100;
+        overflow-y: hidden;
+        border-radius: 30px;
+        box-shadow: 0 10px 10px 2px rgb(163, 154, 154);
+    }
+
+    .account-title {
+        padding: 5%;
+        width: inherit;
+        text-align: center;
+        background-color: #f3f4f5;
+        color:rgb(104, 76, 76);
+        z-index: 100;
+        border-bottom: none;
+    }
+
+    .account-names {
+        display: block;
+        background-color: white;
+        padding: 0 5%;
+        list-style-type: none;
+        border-top: none;
+        
+        height: 30rem;
+        overflow-y: scroll;
+        z-index: 100;
+    }
+
+    li {
+        padding: 1%;
+        font-size: 1.35rem;
+        text-align: left;
+        display: inline-block;
+
+        &:hover {
+            background-color: #f3f4f5;
+        }
+        
+
+        a {
+            color: rgb(104, 76, 76);
+            text-decoration: none;
+        }
+    
+        a:hover{
+            text-decoration: none;
+            color: black;
+        }
+    }
+    
+    
+    img {
+        height: 45px;
+        width: 45px;
+        border-radius: 50px;
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+
+@media (min-width: 700px) {
+    .wave {
+        height: 20rem;
+        padding-top: 30rem;
+
+        svg{
+            display: block;
+        }
+
+        .account-card {
+            width: 40vw;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+	width: .7em;
+}
+ 
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 1em;
+	margin-bottom: 1em;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 1em;
+}
+
+

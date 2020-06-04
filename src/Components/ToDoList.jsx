@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sidebar from './Sidebar'
-import '../css/todo.css'
 import ProfileHeader from './ProfileHeader'
 import ProfileDropdown from './ProfileDropdown'
 
+// import '../css/todo.css'
 
 import square from '../img/square.svg'
 import checkSquare from '../img/correct.svg'
-import greenCheck from '../img/tick.svg'
+// import greenCheck from '../img/tick.svg'
 
 class ToDoList extends Component {
     render() {
@@ -18,12 +18,14 @@ class ToDoList extends Component {
         let ToDo = [] 
         let complete = []
         list.map((item, index)=>{
-            if( item.userId === Number(id+1))
-            return(
-                <div key={index}>
-                    { item.completed ?  complete.push(item) : ToDo.push(item) }
-                </div>
-            ) 
+            if( item.userId === Number(id+1)){
+                return(
+                    <div key={index}>
+                        { item.completed ?  complete.push(item) : ToDo.push(item) }
+                    </div>
+                )
+            }
+            return item
         })
         return (
             <div className="flex-container">
@@ -47,7 +49,7 @@ class ToDoList extends Component {
                                     ToDo.map((item,index) => {
                                         return(
                                             <div key={index} > 
-                                                <img src={square} />
+                                                <img src={square} alt="box" />
                                                 <li>{item.title}</li>
                                             </div>
                                         ) 
@@ -66,7 +68,7 @@ class ToDoList extends Component {
                                     complete.map((item,index) => {
                                         return(
                                             <div  key={index}> 
-                                                <img src={checkSquare} />
+                                                <img src={checkSquare} alt="checkedbox" />
                                                 <li> {item.title} </li>
                                             </div>
                                         )

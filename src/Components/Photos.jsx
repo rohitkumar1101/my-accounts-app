@@ -1,26 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sidebar from './Sidebar'
-import '../css/gallery.css'
 import ProfileHeader from './ProfileHeader'
 import ProfileDropdown from './ProfileDropdown'
+// import '../css/gallery.css'
 
 
 
 class Photos extends Component {
     render() {
-        const { users, photos, hidden} = this.props
+        const { photos, hidden} = this.props
         const id = this.props.match.params.id-1
         const albumId = this.props.match.params.albumId
 
         let photosData = photos.map((photo,index) => {
-                if (photo.albumId === Number(id+1)){
-                    return (
-                        <div key={index} className="photo-gallery">
-                            <img src={ photo.url } alt="profile" />
-                        </div>
-                    )
-                }
+            if (photo.albumId === Number(id+1)){
+                return (
+                    <div key={index} className="photo-gallery">
+                        <img src={ photo.url } alt="profile" />
+                    </div>
+                )
+            }
+            return photo;
         })
  
         return (
@@ -49,7 +50,6 @@ class Photos extends Component {
 }
 
 const mapStateToProps = state => ({
-    users: state.usersData.users,
     photos: state.photosData.albums,
     albums: state.albumData.album,
     hidden: state.dropdown.hidden,

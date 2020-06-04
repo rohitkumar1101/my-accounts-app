@@ -1,40 +1,14 @@
-html{
-    height: 100%;
-}
-.flex-container {
-    display: flex;
-} 
-
-.sidebar-profile {
-    flex: 1;
+.header {
+    margin-top: 1rem;
 }
 
-.profile-content{
-    flex: 3;
-    margin-top: 4%;
-    margin-right: 3%;
-    height: 95%;
-}
-
-h4 {
+.header h4 {
     display: inline-block;
     color: rgb(90, 88, 88);
     font-size: 1.4vw;
 }
 
-.profile-header {
-    float: right;
-    display: flex;
-}
-
-.profile-header h4 {    
-    color: gray;
-    font-weight: normal;
-    flex: 1;
-    margin: auto;
-}
-
-.profile-body {
+/* .profile-body {
     display: flex;
     text-align: center;
 }
@@ -43,7 +17,7 @@ h4 {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* margin-right: 2vw; */
+    margin-right: 2vw;
 }
 
 .personal-details img {
@@ -84,13 +58,13 @@ li p {
     border-left: 1px solid rgba(221, 197, 197, 0.986); 
     height: 80%; 
     position:absolute; 
-    left: 50%; 
+    left: 35rem; 
     margin-top: 2%;
 } 
 
 .address {
     flex: 2;
-    /* margin-left: 2vw; */
+    margin-left: 2vw;
 }
  
 #address-header {
@@ -113,4 +87,28 @@ li p {
 
 .address p span{ 
     color: gray;
+} */
+
+
+@media only screen and (max-width: 600px){
+    .sidebar-profile {
+        display: none;
+    }
+
+    .address img{
+        height: 50%;
+        width: 50%;
+    }
+
+    .profile-header img {    
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+    }
+
+    .profile-body {
+        display: grid;
+        /* text-align: center; */
+    }
+    
 }

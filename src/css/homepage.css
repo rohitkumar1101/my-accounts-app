@@ -17,7 +17,7 @@ svg {
 	text-align: center;
 	margin: 0 auto;
 	padding-top: 10%;
-	z-index: 100;
+	z-index: 1;
 } 
 
 .account-title {
@@ -71,8 +71,7 @@ img {
 	border-radius: 50px;
 	float: left;
 	margin-right: 20px;
-	z-index: 100;
-
+	z-index: 1;
 }
 
 ::-webkit-scrollbar {
@@ -89,5 +88,14 @@ img {
   background-color: darkgrey;
   outline: 1px solid slategrey;
   border-radius: 1em;
+}
 
+@media only screen and (max-width: 600px) {
+	.account-card {
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		z-index: 1;
+		padding: 10% 5%;
+	}
 }

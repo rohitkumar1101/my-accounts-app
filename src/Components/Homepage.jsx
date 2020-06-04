@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Profile from './Profile'
-import '../css/homepage.css'
+// import '../css/homepage.css'
+import '../scss/homepage.scss'
 
 import { getUsers } from '../actions/users_action'
 import { getPosts, getActivities, getComments } from '../actions/posts_action'
@@ -38,12 +39,12 @@ class Homepage extends Component {
         if (users){
             userData = users.map((user, index) => {
                 return (
-                    <div key={index}>
+                    <div key={index} className="single-person">
                         <img src={process.env.PUBLIC_URL + user.profilepicture} alt="Profile" />
                         <li>
                             <Link to={`${process.env.PUBLIC_URL}/profile/${user.id}`} onClick={() => this.handleClick(user.id)}>{user.name}</Link>
                         </li>
-                        <hr></hr>
+                        <hr />
                     </div>
                 )
             })
@@ -51,9 +52,6 @@ class Homepage extends Component {
 
         return (
                 <div className="wave">
-                    {/* <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="-300 0 950 270" >
-                        <path d="M-314,267 C105,364 400,100 812,279" fill="none" stroke="white" strokeWidth="160" strokeLinecap="round" style={{zIndex: 1}}/>
-                    </svg> */}
 
                     <div className="account-card">
                         <div className="account-title">
@@ -63,6 +61,12 @@ class Homepage extends Component {
                             {userData}
                         </div>
                     </div>
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#fff" fill-opacity="1" d="M0,96L48,133.3C96,171,192,245,288,282.7C384,320,480,320,576,272C672,224,768,128,864,80C960,32,1056,32,1152,42.7C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg> */}
+                    {/* <svg viewBox="0 0 1250 700">
+                        <path fill="pink" fillOpacity="1" d="M 0 250 Q 0 400 300 250 Q 400 200 650 300 Q 450 200 250 300 Q 0 400 0 250  "></path>
+                    </svg> */}
                 </div>
         )
     }

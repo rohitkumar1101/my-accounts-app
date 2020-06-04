@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Sidebar from './Sidebar'
 import { connect } from 'react-redux'
 import ProfileHeader from './ProfileHeader'
-import '../css/posts.css'
 import ProfileDropdown from './ProfileDropdown'
+// import '../css/posts.css'
 
 
 class Posts extends Component {
@@ -20,7 +20,7 @@ class Posts extends Component {
         
         //Displaying the posts
         let userPosts = posts.map((post, index) => {
-            if( profileid == post.userId ){
+            if( Number(profileid) === post.userId ){
                 return (
                     <div key={index} className="card">
                         <div className="posts-header">
@@ -37,7 +37,7 @@ class Posts extends Component {
 
                         <div className="comment-card">
                             {
-                                post.userId == comments[index].userId ?
+                                post.userId === comments[index].userId ?
                                 <div>
                                     <img src={ comments[num].profilePicture } alt="profile" />
                                     <div className="center-align">
@@ -53,6 +53,7 @@ class Posts extends Component {
                     </div>
                 )
             }
+            return ''
         })
 
         //Displaying the Recent Activities
@@ -60,7 +61,7 @@ class Posts extends Component {
             return (
                 <div key={index} className="activity-data">
                     {
-                        act.activity == "uploaded post" ?
+                        act.activity === "uploaded post" ?
                         <img src={ act.profilePicture } alt="profile" />
                         : ''
 

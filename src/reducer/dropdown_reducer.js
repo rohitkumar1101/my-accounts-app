@@ -5,7 +5,7 @@ const initState = {
 }
 
 const dropdownReducer = (state = initState, action) => {
-    if(action.type == TOGGLE_DROPDOWN){
+    if(action.type === TOGGLE_DROPDOWN){
         return{
             ...state,
             hidden: !state.hidden

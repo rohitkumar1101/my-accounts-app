@@ -1,0 +1,15 @@
+.profileHeader {
+    float: right;
+}
+
+.profileHeader h4 {    
+    color: gray;
+    font-weight: normal;
+}
+
+.profileHeader img {
+    height: 45px;
+    width: 45px;
+    border-radius: 30px;
+    margin-right: 1rem;
+}
