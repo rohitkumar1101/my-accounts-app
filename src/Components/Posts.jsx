@@ -3,14 +3,12 @@ import Sidebar from './Sidebar'
 import { connect } from 'react-redux'
 import ProfileHeader from './ProfileHeader'
 import ProfileDropdown from './ProfileDropdown'
+import '../scss/posts.scss'
 // import '../css/posts.css'
 
 
 class Posts extends Component {
 
-    componentDidMount(){
-        
-    }
     render() {
         const { users, posts, comments, activity, hidden } = this.props
         const profileid = this.props.match.params.id
@@ -25,7 +23,7 @@ class Posts extends Component {
                     <div key={index} className="card">
                         <div className="posts-header">
                             <img src={ users[id].profilepicture } alt="profile" />
-                            <div className="center-align">
+                            <div className="post-owner">
                                 <h5> { users[id].name }</h5>
                                 <p>{post.time}</p>
                             </div>
@@ -40,11 +38,11 @@ class Posts extends Component {
                                 post.userId === comments[index].userId ?
                                 <div>
                                     <img src={ comments[num].profilePicture } alt="profile" />
-                                    <div className="center-align">
+                                    <div className="comment-owner">
                                         <h5>{ users[comments[num].userId -1].name }</h5>
                                         <h6>{ comments[num].time }</h6>
+                                        <h6> { users[comments[num].userId -1].email } </h6>
                                     </div>
-                                    <h6 className="time"> { users[comments[num].userId -1].email } </h6>
                                     <p> {comments[num].body} </p> 
                                 </div>
                                     : 'No Comment Found'
@@ -68,34 +66,34 @@ class Posts extends Component {
                     }
                     <h5>{ users[act.userId - 1].name}</h5>
                     <p>{ act.activity}</p>
-                    <h6>{ act.time.split(":")[2] }</h6> 
                     <h6>{ act.time.split(":")[1] + ":" }</h6> 
+                    <h6>{ act.time.split(":")[2] }</h6> 
                 </div>
             )
         })
         return ( 
             <div>
-                <div className="flex-container">
-                    <div className="sidebar-profile">
+
+                <div className="posts-content">
+                    <div className="aside">
                         <Sidebar id={this.props.match.params.id} />
                     </div>
-
-                    <div className="posts-content">
+                    <div className="header">
                         <h4>Posts</h4>
                         <ProfileHeader id={id} />
                         <hr /> 
                         { hidden ? null : <ProfileDropdown id={id} /> }
+                    </div>
 
-                        <div className="posts-body">
-                            <div className="posts">
-                                {userPosts}
-                            </div>
+                    <div className="posts-body">
+                        <div className="posts">
+                            {userPosts}
+                        </div>
 
-                            <div className="activity">
-                                <div className="card">
-                                    <h4>Recent Activities</h4>
-                                    {userActivity}
-                                </div>
+                        <div className="activity">
+                            <div className="card">
+                                <h4>Recent Activities</h4>
+                                {userActivity}
                             </div>
                         </div>
                     </div>

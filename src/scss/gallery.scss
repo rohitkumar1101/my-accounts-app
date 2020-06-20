@@ -1,0 +1,122 @@
+*, *::before, *::after { box-sizing: border-box; }
+ 
+:root {
+    --clr-light: rgb(177, 167, 167);
+}
+ 
+.gallery-content {
+    padding: 2rem;
+
+    .header {
+        position: relative;
+        h4 {
+            display: inline-block;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 1rem 0;
+        }
+
+        .profile-header {
+            h4 {
+                display: none;
+            }
+
+            img {
+                cursor: pointer;
+                height: 45px;
+                width: 45px;
+                border-radius: 30px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    }
+
+    .albums {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        
+        .gallery {
+            width: 8rem;
+            margin: 1rem;
+            border: 1px solid var(--clr-light);
+            border-radius: 10px;
+
+
+
+            img {
+                height: 8rem;
+                width: 8rem;
+                // cursor: pointer;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            li {
+                list-style: none;
+                // cursor: pointer;
+                padding: 0.5rem;
+                background-color: #f3f4f5;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .gallery-content {
+        display: grid;
+        grid-template-columns: 0.5fr 2.5fr;
+        grid-gap: 2rem;
+        grid-template-areas: "advert header"
+                            "advert content";
+        
+        aside {
+            grid-area: advert;
+
+            .sidebar {
+                height: 900px;
+                padding-top: 50%;
+            }
+        }
+        .header {
+            grid-column: 2/-1;
+            grid-area: header;
+        }
+
+        h4 {
+            grid-area: header;
+            margin-top: 5rem;
+        }
+        
+        .albums {
+            grid-column: 2/-1;
+            
+            .gallery {
+                width: 20rem;
+    
+                img {
+                    height: 15rem;
+                    width: 100%;
+                    object-fit: cover;
+                }
+    
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
+        
+
+
+    }
+}

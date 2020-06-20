@@ -3,10 +3,7 @@ import { connect } from 'react-redux'
 import Sidebar from './Sidebar'
 import ProfileHeader from './ProfileHeader'
 import ProfileDropdown from './ProfileDropdown'
-
-// import '../css/gallery.css'
-
-
+import '../scss/gallery.scss'  
 
 class Gallery extends Component {
     render() {
@@ -15,31 +12,31 @@ class Gallery extends Component {
  
         let albumsData = albums.map((album,index) => {
             return (
-                <div key={index} className="gallery card">
-                    <a href={ `${process.env.PUBLIC_URL}/gallery/${id+1}/${album.id}`} >
+                <div key={index} className="gallery">
+                    {/* <a href={`${process.env.PUBLIC_URL}/gallery/${id+1}/${album.id}`}> */}
                         <img src={ photos[id+index].url } alt="profile" />
                         <li className="desc">{ album.title} </li>
-                    </a>
+                    {/* </a> */}
                 </div>
             )
         })
 
         return (
-            <div className="flex-container">
-                <div className="sidebar-profile">
+            <div  className="gallery-content">
+                <aside>
                     <Sidebar id={this.props.match.params.id} />
-                </div>
-                <div className="gallery-content">
+                </aside>
+
+                <div className="header">
                     <h4>Gallery</h4>
                     <ProfileHeader id={id} />
                     <hr />
                     { hidden ? null : <ProfileDropdown id={id} /> }
-                    <br/>
+                </div>
 
-                    <h4>Albums</h4>
-                    <div className="albums">
-                        { albumsData }
-                    </div>
+                <h4>Albums</h4>
+                <div className="albums">
+                    { albumsData }
                 </div>
             </div> 
         )
@@ -53,4 +50,4 @@ const mapStateToProps = state => ({
 })
 
 
-export default connect(mapStateToProps)(Gallery)
+export default connect(mapStateToProps)(Gallery) 

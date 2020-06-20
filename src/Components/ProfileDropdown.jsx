@@ -1,48 +1,37 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleDropDown } from '../actions/profile_dropdown'
+import '../scss/dropdown.scss'
 
 
-class ProfileDropdown extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {}
-        this.onClick = this.onClick.bind(this)
+const ProfileDropdown = ({id}) => {
+    const users = useSelector(state => state.usersData.users)
+    const dispatch = useDispatch()
+
+    const random = Math.floor(Math.random() * 9); 
+    const onClick = () => {
+        dispatch(toggleDropDown())
+        console.log("TDD")
     }
- 
-    onClick(){
-        this.props.hidden = false
-    }
-    
-    render() {
-        const { users } = this.props
-        const id = this.props.id
-        return (
+    return (
             <div className="profile-dropdown">
                 <img src={ users[id].profilepicture } alt="profile" />
                 <li> {users[id].name} </li>
                 <li> {users[id].email} </li>
                 <hr />
                 <div className="user-list">
-                    <img src={ users[id+1].profilepicture } alt="profile" />
-                    <h6> {users[id+1].name} </h6>
+                    <img src={ users[random].profilepicture } alt="profile" />
+                    <h6> {users[random].name} </h6>
                 </div>
                 <hr />
                 <div className="user-list">
-                    <img src={ users[id+2].profilepicture } alt="profile" />
-                    <h6> {users[id+2].name} </h6>
+                    <img src={ users[random+1].profilepicture } alt="profile" />
+                    <h6> {users[random+1].name} </h6>
                 </div>
-                <hr /><br />
-                <a href={`${process.env.PUBLIC_URL}/`} className="btn-lg btn-danger" onClick={this.onClick}>Sign Out</a>
+                <hr />
+                <a onClick={() => onClick()} href={`${process.env.PUBLIC_URL}/`} className="btn">Sign Out</a>
             </div>
-        )
-    }
+    )
 }
 
-
-const mapStateToProps = state => ({
-    users: state.usersData.users,
-    hiddem: state.dropdown.hidden,
-})
-
-export default connect(mapStateToProps)(ProfileDropdown)
+export default ProfileDropdown

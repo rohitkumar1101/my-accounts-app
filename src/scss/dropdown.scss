@@ -1,0 +1,78 @@
+*, *::before, *::after { box-sizing: border-box;}
+
+:root {
+    --clr-light: rgb(177, 167, 167);
+}
+
+.profile-dropdown {
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+    margin: 1rem;
+    box-shadow: 0 7px 30px 7px rgb(218, 189, 189);
+
+    img {
+        height: 10rem;
+        width: 10rem;
+        border-radius: 50%;
+        margin: 0.5rem auto;
+    }
+
+    li {
+        list-style: none;
+        margin: 0.5rem 0;
+    }
+
+    li:first-of-type {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    li:last-of-type {
+        color: var(--clr-light);
+    }
+
+    hr {
+        margin: 0.5rem 3rem;
+        opacity: 0.1;
+    }
+
+    .user-list {
+        img {
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        h6 {
+            margin: 0;
+            display: inline-block;
+            position: relative;
+            bottom: 1.5rem;
+            left: 1rem;
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+    }
+
+    .btn {
+        text-decoration: none;
+        color: #fff;
+        background-color: #D55151;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+        border-radius: 30px;
+    }
+}
+
+@media (min-width: 700px) {
+    .profile-dropdown {
+        position: absolute;
+        background-color: #f7f8f9;
+        z-index: 10;
+        width: 30rem;
+        right: -1rem;
+    }
+}

@@ -1,0 +1,194 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --clr-light: rgb(177, 167, 167);
+}
+ 
+.posts-content { 
+    padding: 2rem;
+
+    .header {
+        position: relative;
+        h4 {
+            display: inline-block;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 1rem 0;
+        }
+
+        .profile-header {
+            h4 {
+                display: none;
+            }
+
+            img {
+                cursor: pointer;
+                height: 45px;
+                width: 45px;
+                border-radius: 30px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    }
+}
+
+.posts-body {
+    .posts {
+        .card {
+            border: 1px solid var(--clr-light);
+            border-radius: 10px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+
+            .posts-header{
+                img {
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 50%;
+                }
+
+                .post-owner{
+                    display: inline-block;
+                    position: relative;
+                    left: 1rem;
+                    bottom: 0.5rem;
+
+                    h5{
+                        font-size: 1rem;
+                        margin: 0;
+                    }
+        
+                    p {
+                        font-size: 0.9rem;
+                        color:  var(--clr-light);
+                        margin-top: 0;
+                    }
+
+                }
+            }
+
+            .post-image{
+                img {
+                    height: 10rem;
+                    width: 100%;
+                }
+            }
+
+            li {
+                list-style: none;
+                padding-bottom: 1rem;
+            }
+
+            .comment-card {
+                img {
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 50%;
+                }
+                
+                .comment-owner{
+                    display: inline-block;
+                    position: relative;
+                    left: 1rem;
+                    bottom: 0.5rem;
+
+                    h5,h6 {
+                        margin: 0;
+                    }
+
+                    h6 {
+                        color: var(--clr-light);
+                    }
+                }
+
+                p {
+                    margin: 0.5rem 0 0 4rem;
+                }
+
+            }
+        }
+    }
+
+    .activity {
+        .card {
+            border: 1px solid var(--clr-light);
+            border-radius: 10px;
+            padding: 0.5rem;
+            height: 30rem;
+            overflow-y: scroll;
+
+            h4 {
+                font-size: 1.5rem;
+                text-align: center;
+                margin: 1rem 0;
+            }
+
+            .activity-data {
+                img {
+                    height: 15px;
+                    width: 15px;
+                }
+
+                h5,p,h6 {
+                    display: inline-block;
+                    margin: 0.5rem auto;
+                }
+
+                h5 {
+                    font-size: 1rem;
+                    margin-right: 0.5rem;
+                }
+
+                p {
+                    color: var(--clr-light);
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .posts-content {
+        display: grid;
+        grid-template-columns: 0.5fr 1.5fr 1fr;
+        grid-gap: 2rem;
+        grid-template-areas:"advert header"
+                            "advert content";
+
+        .aside {
+            grid-area: advert;
+
+            .sidebar{
+                height: 900px;
+                padding-top: 50%;
+            }
+        }
+
+        .header {
+            grid-column: 2 / -1;
+        }
+
+        .posts-body {
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-column: 2 / -1;
+            
+            .posts {
+                grid-column: 1 / 2;
+            }
+
+            .activity {
+                grid-column: 2 / -1;
+            }
+
+            .activity .card {
+                height: inherit;
+                overflow-y: hidden;
+            }
+            
+        }
+    }
+}

@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import Sidebar from './Sidebar'
 import ProfileHeader from './ProfileHeader'
 import ProfileDropdown from './ProfileDropdown'
+ 
+import '../scss/todo.scss'
 
-// import '../css/todo.css'
-
-import square from '../img/square.svg'
-import checkSquare from '../img/correct.svg'
+// import square from '../img/square.svg'
+// import checkSquare from '../img/correct.svg'
 // import greenCheck from '../img/tick.svg'
 
 class ToDoList extends Component {
@@ -28,56 +28,51 @@ class ToDoList extends Component {
             return item
         })
         return (
-            <div className="flex-container">
-                <div className="sidebar-profile">
+            <div className="todo-content">
+                <aside>
                     <Sidebar id={this.props.match.params.id} />
-                </div>
+                </aside>
 
-                <div className="todo-content">
+                <div className="header">
                     <h4>ToDo</h4>
                     <ProfileHeader id={id} />
                     <hr />
                     { hidden ? null : <ProfileDropdown id={id} /> }
+                </div>
 
-                    <div className="todo-body">
-                        <div className="todo">
-                            <div className="card">
-                                <h4>ToDo</h4>
-                            </div>
-                            <div className="card" id="tasks">
-                                {
-                                    ToDo.map((item,index) => {
-                                        return(
-                                            <div key={index} > 
-                                                <img src={square} alt="box" />
-                                                <li>{item.title}</li>
-                                            </div>
-                                        ) 
-                                    })
-                                }
-                            </div>
-                        </div>
-
-                        <div className="complete">
-                            <div className="card">
-                                <h4>Completed</h4>
-                                {/* <img src={greenCheck} id="tick" /> */}
-                            </div>
-                            <div className="card" id="tasks">
-                                {
-                                    complete.map((item,index) => {
-                                        return(
-                                            <div  key={index}> 
-                                                <img src={checkSquare} alt="checkedbox" />
-                                                <li> {item.title} </li>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
+                {/* <div className="todo-body"> */}
+                    <div className="todo">
+                        <h4 className="heading">ToDo</h4>
+                        <div className="tasks">
+                            {
+                                ToDo.map((item,index) => {
+                                    return(
+                                        <div key={index} className="task-item"> 
+                                            <input type="checkbox" id={`task${index + 1}`} value={item.title} readOnly />
+                                            <label htmlFor={`task${index + 1}`}>{item.title}</label>
+                                        </div>
+                                    ) 
+                                })
+                            }
                         </div>
                     </div>
-                </div>
+                    
+                    <div className="completed">
+                        <h4 className="heading">Completed</h4>
+                        <div className="tasks">
+                            {
+                                complete.map((item,index) => {
+                                    return(
+                                        <div key={index} className="task-item"> 
+                                            <input type="checkbox" id="task" value={item.title} checked readOnly />
+                                            <label htmlFor="task">{item.title}</label>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                {/* </div> */}
             </div>
         )
     }

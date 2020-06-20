@@ -1,0 +1,132 @@
+.sidebar {
+    display: none;
+}
+
+.hamburger {
+    width: 2rem;
+    height: 1rem;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .line {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: #333;
+        border-radius: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.left-nav {
+    background-color: #002538;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 15rem;
+    z-index: 10;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+
+    @keyframes fade {
+        0% {
+            width: 7.5rem;
+            background-color: #002538;
+        }
+
+        100% {
+            width: 15rem;
+            background-color: #002538;
+        }
+        
+    }
+
+    .spacing {
+        padding: 3rem 0;
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            padding-left: 1rem;
+
+            &:hover {
+                color: rgb(0, 225, 255);
+            }
+        }
+
+        hr {
+            margin: 0.5rem 1rem;
+        }
+        
+    }
+
+    .cross {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    
+        .slant-line:first-of-type {
+            width: 2rem;
+            height: 0.25rem;
+            background-color: #ccc;
+            border-radius: 10px;
+            transform: rotate(45deg);
+        }
+
+        .slant-line:last-of-type {
+            width: 2rem;
+            height: 0.25rem;
+            background-color: #ccc;
+            border-radius: 10px;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+
+@media (min-width: 800px){
+    .sidebar {
+        display: block;
+        padding: 15% 0 0 2%;
+        background-color: #4327c0;
+        // position: fixed;
+        height: 95%;
+        border-radius: 30px;
+    
+        a {
+            display: block;
+            color: white;
+            padding: 2%;
+            font-size: 22px;
+            text-decoration: none;
+        } 
+    
+        hr {
+            background-color: rgb(236, 207, 207);
+            margin-right: 3rem;
+            border: 0.5px solid rgb(236, 207, 207) ;
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+    
+}
+

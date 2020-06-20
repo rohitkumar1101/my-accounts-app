@@ -25,7 +25,7 @@ class Homepage extends Component {
         this.props.getPhotos()
         this.props.getAlbums()
         this.props.getToDolist()
-    }
+    } 
 
     handleClick(id){
         return (

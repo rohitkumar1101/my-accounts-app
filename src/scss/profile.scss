@@ -1,0 +1,142 @@
+*, *::before, *::after { box-sizing: border-box; }
+ 
+
+
+.profile-content {
+    padding: 2rem;
+
+    .header {
+        position: relative;
+        h4 {
+            display: inline-block;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 1rem 0;
+        }
+
+        .profile-header { 
+            h4 {
+                display: none;
+            }
+
+            img {
+                height: 45px;
+                width: 45px;
+                border-radius: 30px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .personal-details {
+        img {
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        h4 {
+            text-align: center;
+            margin: 0;
+            font-size: 1.125rem;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    label {
+        justify-self: end;
+        font-weight: 600;
+    }
+
+    label:after {
+        content: ' : ';
+    }
+
+    p {
+        display: inline-block;
+    }
+
+    .address {
+        img {
+            height: 20rem;
+            width: 20rem;
+        }
+
+        span {
+            font-weight: 600;
+        }
+    }
+} 
+
+@media (min-width: 800px) {
+    .profile-content {
+        display: grid;
+        grid-template-columns: 0.5fr 1.5fr 2fr;
+        grid-gap: 2rem;
+        grid-template-areas:"advert header "
+                            "advert content";
+
+        .aside {
+            grid-row: 1/2; 
+            grid-area: advert;
+
+            .sidebar {
+                height: 900px;
+                padding-top: 50%;
+            }
+        }
+        
+        .header {
+            grid-column: 2 / -1;
+        }
+
+        .personal-details {
+            grid-column: 2 / 3; 
+        }
+
+        .address {
+            grid-column: 3 / -1; 
+        }
+
+        ul {
+            padding-left: 3rem;
+        }
+
+        // .vertical { 
+        //     border-left: 1px solid rgba(221, 197, 197, 0.986); 
+        //     height: 80%; 
+        //     position:absolute; 
+        //     left: 50%; 
+        //     margin-top: 2%;
+        // } 
+    }
+}
+
+@media (min-width: 1260px) {
+    .profile-content{
+
+        ul {
+            padding-left: 5rem;
+        }
+
+        .address {
+            img {
+                height: 30rem;
+                width: 45rem;
+            }
+    
+            span {
+                font-weight: 600;
+            }
+        }
+
+    }
+}

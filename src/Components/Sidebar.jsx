@@ -1,19 +1,32 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { connect } from 'react-redux' 
-import styles from '../css/sidebar.module.css'
+import Hamburger from './Hamburger'
+import '../scss/sidebar.scss'
+import LeftNav from './LeftNav'
 
-class Sidebar extends Component {
-    render() {
-        return ( 
-            <div className={styles.sidebar}>
-                <Link to={`${process.env.PUBLIC_URL}/profile/${this.props.id}`}>Profile</Link> <hr />
-                <Link to={`${process.env.PUBLIC_URL}/posts/${this.props.id}`}>Posts</Link> <hr />
-                <Link to={`${process.env.PUBLIC_URL}/gallery/${this.props.id}`}>Gallery</Link> <hr />
-                <Link to={`${process.env.PUBLIC_URL}/todo/${this.props.id}`}>ToDo</Link>
+const Sidebar = ({id}) =>  {
+    const [open, setOpen] = useState(false)
+
+    return ( 
+        <div>
+            <div className="sidebar">
+                <Link to={`${process.env.PUBLIC_URL}/profile/${id}`}>Profile</Link> <hr />
+                <Link to={`${process.env.PUBLIC_URL}/posts/${id}`}>Posts</Link> <hr />
+                <Link to={`${process.env.PUBLIC_URL}/gallery/${id}`}>Gallery</Link> <hr />
+                <Link to={`${process.env.PUBLIC_URL}/todo/${id}`}>ToDo</Link>
             </div>
-        )
-    } 
+            <div onClick={() => setOpen(!open)}>
+                {
+                    open ? 
+                    <div className="left-nav">
+                        <LeftNav id={id} /> 
+                    </div>
+                    :
+                    <Hamburger open={open} />
+                }
+            </div>
+        </div>
+    )
 }
 
 export default Sidebar
