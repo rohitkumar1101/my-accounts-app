@@ -85,7 +85,7 @@ class Posts extends Component {
                         { hidden ? null : <ProfileDropdown id={id} /> }
                     </div>
 
-                    <div className="posts-body">
+                    {/* <div className="posts-body"> */}
                         <div className="posts">
                             {userPosts}
                         </div>
@@ -96,7 +96,7 @@ class Posts extends Component {
                                 {userActivity}
                             </div>
                         </div>
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         )
