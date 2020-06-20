@@ -71,7 +71,7 @@
 
             .post-image{
                 img {
-                    height: 10rem;
+                    height: 15rem;
                     width: 100%;
                 }
             }
@@ -153,7 +153,7 @@
 @media (min-width: 800px) {
     .posts-content {
         display: grid;
-        grid-template-columns: 0.5fr 1.5fr 1fr;
+        grid-template-columns: 300px 1.5fr 1fr;
         grid-gap: 2rem;
         grid-template-areas:"advert header"
                             "advert content";
@@ -163,7 +163,6 @@
 
             .sidebar{
                 height: 900px;
-                padding-top: 50%;
             }
         }
 
@@ -178,16 +177,28 @@
             
             .posts {
                 grid-column: 1 / 2;
+
+                .card {
+                    padding: 2rem;
+                }
+
+                .post-image {
+                    img{
+                        height: 20rem;
+                        object-fit: fill;
+                    }
+                }
             }
 
             .activity {
                 grid-column: 2 / -1;
+                
+                .card {
+                    height: inherit;
+                    overflow-y: hidden;
+                }
             }
 
-            .activity .card {
-                height: inherit;
-                overflow-y: hidden;
-            }
             
         }
     }

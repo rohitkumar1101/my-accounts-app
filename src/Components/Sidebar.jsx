@@ -13,7 +13,7 @@ const Sidebar = ({id}) =>  {
                 <Link to={`${process.env.PUBLIC_URL}/profile/${id}`}>Profile</Link> <hr />
                 <Link to={`${process.env.PUBLIC_URL}/posts/${id}`}>Posts</Link> <hr />
                 <Link to={`${process.env.PUBLIC_URL}/gallery/${id}`}>Gallery</Link> <hr />
-                <Link to={`${process.env.PUBLIC_URL}/todo/${id}`}>ToDo</Link>
+                <Link to={`${process.env.PUBLIC_URL}/todo/${id}`}>ToDo</Link> <hr />
             </div>
             <div onClick={() => setOpen(!open)}>
                 {

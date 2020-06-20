@@ -74,7 +74,7 @@
 @media (min-width: 768px) {
     .gallery-content {
         display: grid;
-        grid-template-columns: 0.5fr 2.5fr;
+        grid-template-columns: 300px 2.5fr;
         grid-gap: 2rem;
         grid-template-areas: "advert header"
                             "advert content";
@@ -84,7 +84,6 @@
 
             .sidebar {
                 height: 900px;
-                padding-top: 50%;
             }
         }
         .header {
