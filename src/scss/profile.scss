@@ -79,7 +79,7 @@
 @media (min-width: 800px) {
     .profile-content {
         display: grid;
-        grid-template-columns: 300px 1.5fr 2fr;
+        grid-template-columns: 300px 1fr 1.5fr;
         grid-gap: 2rem;
         grid-template-areas:"advert header "
                             "advert content";
