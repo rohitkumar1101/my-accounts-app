@@ -1,3 +1,5 @@
+A React JS accounts app which shows the details of various users. Details such as personal details, posts uploaded by the user, albums and its photos and a to-do list. 
+
 <strong>Instructions to run the application locally</strong>
 <ol>
   <li>Clone the repository</li>
